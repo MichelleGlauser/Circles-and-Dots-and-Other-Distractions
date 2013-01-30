@@ -11,16 +11,22 @@
         </div>
         <div id="nav">
             <ul>
-                <li><a href="#">Techie</a></li>
+                <li><a href="#">Techie</a>
+                    <ul><li><a href="#">Subitem One</a></li>
+                    <li><a href="#">Second Subitem</a></li>
+                    <li><a href="#">Numero Tres</a></li></ul>
+                </li>
                 <li><a href="#">Personal</a></li>
                 <li><a href="#">About Me</a></li>
                 <li><a href="#">Popular Posts</a></li>
                 <li><a href="#">Categories</a></li>
+                <li><a href="#">Archive/a></li>
                 <li><a href="#">Other Resources</a></li>
             </ul>
       </div>
         <div id="posts">         
-            <h2 id="user-name">Michelle Glauser</h2>
+            <h2 id="user-name"><img id="eyestickers" src="../resources/eye_stickers.jpg"/><span id="user-name">Michelle Glauser</span></h2>
+
             <p>
                 Thundercats brooklyn williamsburg mcsweeney's PBR. Organic cosby sweater fashion axe williamsburg, authentic intelligentsia salvia banh mi aesthetic trust fund put a bird on it. Literally banjo kogi street art, pinterest selfies swag post-ironic vinyl pour-over. Selvage disrupt shoreditch, umami pour-over authentic DIY. Cray leggings deep v, jean shorts food truck 90's literally mumblecore salvia beard etsy meh. Marfa pour-over wolf ugh, godard chillwave readymade disrupt intelligentsia neutra literally portland ethnic. Umami church-key bespoke, swag beard thundercats skateboard williamsburg cliche try-hard mustache kale chips.
             </p>
@@ -48,7 +54,19 @@
             var myNewName = window.prompt('Pick a new name!');
             document.getElementById('user-name').innerHTML = myNewName;
           }
-        document.onclick = replaceName;
+            document.onclick = replaceName;
+        sfHover = function() {
+            var sfEls = document.getElementById("navbar").getElementsByTagName("li");
+            for (var i=0; i<sfEls.length; i++) {
+                sfEls[i].onmouseover=function() {
+                    this.className+=" hover";
+            }
+            sfEls[i].onmouseout=function() {
+                this.className=this.className.replace(new RegExp(" hover\\b"), "");
+        }
+    }
+}
+if (window.attachEvent) window.attachEvent("onload", sfHover);
     </script>
     </body>
 </html>
